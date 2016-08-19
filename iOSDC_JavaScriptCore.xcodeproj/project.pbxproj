@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B167A2AF1D655523003EF904 /* iOSDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167A2AE1D655523003EF904 /* iOSDC.swift */; };
+		B167A2B11D65D6A0003EF904 /* MyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167A2B01D65D6A0003EF904 /* MyObject.swift */; };
+		B167A2B31D65F0C9003EF904 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167A2B21D65F0C9003EF904 /* Image.swift */; };
 		B1CABF181D6454EA00EAF58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CABF171D6454EA00EAF58A /* AppDelegate.swift */; };
 		B1CABF1A1D6454EA00EAF58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CABF191D6454EA00EAF58A /* ViewController.swift */; };
 		B1CABF1C1D6454EA00EAF58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1CABF1B1D6454EA00EAF58A /* Assets.xcassets */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B167A2AE1D655523003EF904 /* iOSDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDC.swift; sourceTree = "<group>"; };
+		B167A2B01D65D6A0003EF904 /* MyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyObject.swift; sourceTree = "<group>"; };
+		B167A2B21D65F0C9003EF904 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B1CABF141D6454EA00EAF58A /* iOSDC_JavaScriptCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDC_JavaScriptCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1CABF171D6454EA00EAF58A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1CABF191D6454EA00EAF58A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +60,9 @@
 			children = (
 				B1CABF171D6454EA00EAF58A /* AppDelegate.swift */,
 				B1CABF191D6454EA00EAF58A /* ViewController.swift */,
+				B167A2AE1D655523003EF904 /* iOSDC.swift */,
+				B167A2B01D65D6A0003EF904 /* MyObject.swift */,
+				B167A2B21D65F0C9003EF904 /* Image.swift */,
 				B1CABF1B1D6454EA00EAF58A /* Assets.xcassets */,
 				B1CABF1D1D6454EB00EAF58A /* Main.storyboard */,
 				B1CABF201D6454EB00EAF58A /* Info.plist */,
@@ -133,8 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B167A2AF1D655523003EF904 /* iOSDC.swift in Sources */,
 				B1CABF1A1D6454EA00EAF58A /* ViewController.swift in Sources */,
+				B167A2B11D65D6A0003EF904 /* MyObject.swift in Sources */,
 				B1CABF181D6454EA00EAF58A /* AppDelegate.swift in Sources */,
+				B167A2B31D65F0C9003EF904 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +301,7 @@
 				B1CABF251D6454EB00EAF58A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
