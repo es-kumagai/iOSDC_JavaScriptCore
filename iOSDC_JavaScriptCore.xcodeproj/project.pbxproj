@@ -14,6 +14,7 @@
 		B1CABF1A1D6454EA00EAF58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CABF191D6454EA00EAF58A /* ViewController.swift */; };
 		B1CABF1C1D6454EA00EAF58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1CABF1B1D6454EA00EAF58A /* Assets.xcassets */; };
 		B1CABF1F1D6454EB00EAF58A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1CABF1D1D6454EB00EAF58A /* Main.storyboard */; };
+		B1F283391D66B51C0025D701 /* JavaScriptAPI.js in Resources */ = {isa = PBXBuildFile; fileRef = B1F283381D66B51C0025D701 /* JavaScriptAPI.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B1CABF1B1D6454EA00EAF58A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1CABF1E1D6454EB00EAF58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B1CABF201D6454EB00EAF58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1F283381D66B51C0025D701 /* JavaScriptAPI.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JavaScriptAPI.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,25 @@
 		B1CABF161D6454EA00EAF58A /* iOSDC_JavaScriptCore */ = {
 			isa = PBXGroup;
 			children = (
-				B1CABF171D6454EA00EAF58A /* AppDelegate.swift */,
-				B1CABF191D6454EA00EAF58A /* ViewController.swift */,
 				B167A2AE1D655523003EF904 /* iOSDC.swift */,
+				B1F283381D66B51C0025D701 /* JavaScriptAPI.js */,
+				B1F2833A1D66B7CB0025D701 /* Support Files */,
+			);
+			path = iOSDC_JavaScriptCore;
+			sourceTree = "<group>";
+		};
+		B1F2833A1D66B7CB0025D701 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
 				B167A2B01D65D6A0003EF904 /* MyObject.swift */,
 				B167A2B21D65F0C9003EF904 /* Image.swift */,
 				B1CABF1B1D6454EA00EAF58A /* Assets.xcassets */,
 				B1CABF1D1D6454EB00EAF58A /* Main.storyboard */,
 				B1CABF201D6454EB00EAF58A /* Info.plist */,
+				B1CABF171D6454EA00EAF58A /* AppDelegate.swift */,
+				B1CABF191D6454EA00EAF58A /* ViewController.swift */,
 			);
-			path = iOSDC_JavaScriptCore;
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CABF1C1D6454EA00EAF58A /* Assets.xcassets in Resources */,
+				B1F283391D66B51C0025D701 /* JavaScriptAPI.js in Resources */,
 				B1CABF1F1D6454EB00EAF58A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

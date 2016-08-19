@@ -19,6 +19,34 @@ func iOSDC() {
     nullTest()
     standards()
     implement()
+    usingBundle()
+}
+
+func usingBundle() {
+
+    print(#function)
+
+    let sourcePath = Bundle.main.url(forResource: "JavaScriptAPI", withExtension: "js")!
+    let sourceCode = try! String(contentsOf: sourcePath)
+    
+    let context = JSContext()!
+    
+    context.evaluateScript(sourceCode)
+    
+    print("region", context.evaluateScript("getAttribute('region')"))
+    print("unknown", context.evaluateScript("getAttribute('unknown')"))
+    
+    context.evaluateScript("var article = new Article('iOSDC', 'Swift で JavaScript 始めませんか？');")
+    
+    print("title: ", context.evaluateScript("article.title"))
+    print("body: ", context.evaluateScript("article.body"))
+    print("description: ", context.evaluateScript("article.getDescription()"))
+    
+    let article = context.evaluateScript("article")!//.toDictionary()
+    
+    print("getDescription: ", article.objectForKeyedSubscript("getDescription"))
+    print("native func: ", article.invokeMethod("getDescription", withArguments: []))
+    print("native prop: ", article.forProperty("title"))
 }
 
 func implement() {
@@ -27,7 +55,7 @@ func implement() {
     
     let context = JSContext()!
 
-    context.evaluateScript("var timeout = 5.0;")
+    context.evaluateScript("var timeout = 5.0")
     
     let account: String = "@es_kumagai"
     var options1 = [] as Array<String>
@@ -39,18 +67,18 @@ func implement() {
     context.setObject(options2, forKeyedSubscript: "options2" as NSString)
     context.setObject(myObject, forKeyedSubscript: "myObject" as NSString)
     
-    context.evaluateScript("options1.push('A1');")
-    context.evaluateScript("options1.push('B1');")
-    context.evaluateScript("options1.push('C1');")
-    context.evaluateScript("options2.push('A2');")
-    context.evaluateScript("options2.push('B2');")
-    context.evaluateScript("options2.push('C2');")
+    context.evaluateScript("options1.push('A1')")
+    context.evaluateScript("options1.push('B1')")
+    context.evaluateScript("options1.push('C1')")
+    context.evaluateScript("options2.push('A2')")
+    context.evaluateScript("options2.push('B2')")
+    context.evaluateScript("options2.push('C2')")
 
     print("js : myObject.v1", context.evaluateScript("myObject.v1"))
     print("js : myObject.v2", context.evaluateScript("myObject.v2"))
     print("js : myObject.v3", context.evaluateScript("myObject.v3"))
 
-    context.evaluateScript("myObject.v2 = 1000;")
+    context.evaluateScript("myObject.v2 = 1000")
 
     print("js : account", context.evaluateScript("'JS: ' + name"))
     
@@ -80,23 +108,23 @@ func implement() {
     print("js : myObject.v3", context.evaluateScript("myObject.v3"))
     
     
-    context.evaluateScript("var myObject2;")
-    context.evaluateScript("myObject2 = MyObject.makeV1V2(8, 88);")
+    context.evaluateScript("var myObject2")
+    context.evaluateScript("myObject2 = MyObject.makeV1V2(8, 88)")
     
     print("try 1st : myObject2", context.objectForKeyedSubscript("myObject2"))
 
     context.setObject(MyObject.self, forKeyedSubscript: "MyObject" as NSString)
-    context.evaluateScript("myObject2 = MyObject.makeWithV1V2(8, 88);")
+    context.evaluateScript("myObject2 = MyObject.makeWithV1V2(8, 88)")
 
     print("try 2nd : myObject2", context.objectForKeyedSubscript("myObject2"))
 
-    context.evaluateScript("var attributes = { 'name' : 'kumagai', 'region' : 'JP' };")
+    context.evaluateScript("var attributes = { 'name' : 'kumagai', 'region' : 'JP' }")
     context.evaluateScript("function getAttribute(name) {" +
         "    return attributes[name];" +
         "}")
 
-    print("region", context.evaluateScript("getAttribute('region');"))
-    print("unknown", context.evaluateScript("getAttribute('unknown');"))
+    print("region", context.evaluateScript("getAttribute('region')"))
+    print("unknown", context.evaluateScript("getAttribute('unknown')"))
     
     do {
 
