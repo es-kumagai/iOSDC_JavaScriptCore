@@ -22,16 +22,36 @@ func iOSDC() {
     usingBundle()
 }
 
+extension JSContext {
+    
+    @discardableResult
+    func evaluateURL(forResource name: String?, withExtension extname: String?, bundle: Bundle = Bundle.main) -> JSValue! {
+        
+        let url = bundle.url(forResource: name, withExtension: extname)!
+        let code = try! String(contentsOf: url)
+        
+        return evaluateScript(code)
+    }
+    
+    convenience init(urlResource name: String?, withExtension extname: String?, bundle: Bundle = Bundle.main) {
+        
+        self.init()!
+        evaluateURL(forResource: name, withExtension: extname)
+    }
+}
+
 func usingBundle() {
 
     print(#function)
 
-    let sourcePath = Bundle.main.url(forResource: "JavaScriptAPI", withExtension: "js")!
-    let sourceCode = try! String(contentsOf: sourcePath)
-    
-    let context = JSContext()!
-    
-    context.evaluateScript(sourceCode)
+//    let sourcePath = Bundle.main.url(forResource: "JavaScriptAPI", withExtension: "js")!
+//    let sourceCode = try! String(contentsOf: sourcePath)
+//    
+//    let context = JSContext()!
+
+//    context.evaluateScript(sourceCode)
+
+    let context = JSContext(urlResource: "JavaScriptAPI", withExtension: "js")
     
     print("region", context.evaluateScript("getAttribute('region')"))
     print("unknown", context.evaluateScript("getAttribute('unknown')"))
