@@ -14,6 +14,9 @@ import AppKit
     var width: Int { get set }
     var height: Int { get set }
     
+    init(name: String, scale: CGFloat)
+    init(_ name: String, _ scale: CGFloat)
+    
     static func make(name: String, scale: CGFloat) -> AnyObject
 }
 
@@ -26,6 +29,11 @@ class Image : NSObject, ImageInterface {
     class func make(name: String, scale: CGFloat) -> AnyObject {
         
         return self.init(name: name, scale: scale)
+    }
+    
+    required convenience init(_ name: String, _ scale: CGFloat) {
+        
+        self.init(name: name, scale: scale)
     }
     
     required init(name: String, scale: CGFloat) {

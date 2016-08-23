@@ -20,24 +20,98 @@ func iOSDC() {
     standards()
     implement()
     usingBundle()
+    instantiate()
+    reference()
+    ecma6()
+    
+    print("Done")
 }
 
-extension JSContext {
+func ecma6() {
+
+    print(#function)
     
-    @discardableResult
-    func evaluateURL(forResource name: String?, withExtension extname: String?, bundle: Bundle = Bundle.main) -> JSValue! {
+    let context = JSContext()!
+
+    print(context.evaluateScript("[for (x of [0, 1, 2]) for (y of [0, 1, 2]) x + '' + y]"))
+    print(context.evaluateScript("var array2 = [for (i of [1,2,3,4,5]) if (i > 3) i]"))
+    print(context.evaluateScript("var square2 = x => x * x; square2;"))
+    print(context.evaluateScript("function increment(x, y = 1) { return x += y; }; increment(10);"))
+}
+
+func reference() {
+
+    print(#function, "Start")
+    
+    do {
         
-        let url = bundle.url(forResource: name, withExtension: extname)!
-        let code = try! String(contentsOf: url)
+        let vm = JSVirtualMachine()!
         
-        return evaluateScript(code)
+        do {
+
+            let context = JSContext(virtualMachine: vm)!
+            
+            do {
+                
+                let object1 = MyObject(v1: 1, v2: 3, v3: 5)
+                
+                print("Context にセット")
+                context.setObject(object1, forKeyedSubscript: "obj1" as NSString)
+                
+//                print("明示的にリリース？できない")
+//                vm.removeManagedReference(object, withOwner: nil)
+//                context.evaluateScript("obj = undefined")
+                
+                print("Object をリリース")
+                
+                print("Object を JavaScript でセット")
+                context.setObject(MyObject.self, forKeyedSubscript: "MyObject" as NSString)
+                context.evaluateScript("var obj2 = MyObject.makeWithV1V2(2, 4)")
+   
+                context.evaluateScript("obj2 = undefined")
+                
+                print("インスタンスを自己管理")
+                var object3 = MyObject(v1: 1, v2: 3, v3: 5) as Optional
+
+                print("    add")
+                vm.addManagedReference(object3, withOwner: owner)
+                context.setObject(object1, forKeyedSubscript: "obj3" as NSString)
+                
+                print("obj3: ", context.objectForKeyedSubscript("obj3"))
+
+                let imported = JSManagedValue(value: context.objectForKeyedSubscript("obj3"))
+//                let imported = context.objectForKeyedSubscript("obj3")
+
+                object3 = nil   // vm で remove しなくても開放される。
+                
+                print("    remove")
+                vm.removeManagedReference(object3, withOwner: owner)
+                
+                print("obj3 v1: ", context.objectForKeyedSubscript("obj3").forProperty("v1"))
+                print("imported v1: ", imported?.value.forProperty("v1"))
+                
+                print("    done")
+            }
+            
+            print("Context をリリース")
+        }
+        
+        print("VM をリリース")
     }
     
-    convenience init(urlResource name: String?, withExtension extname: String?, bundle: Bundle = Bundle.main) {
-        
-        self.init()!
-        evaluateURL(forResource: name, withExtension: extname)
-    }
+    print(#function, "End")
+}
+
+func instantiate() {
+    
+    print(#function)
+    
+    let context = JSContext()!
+    
+    context.setObject(Image.self, forKeyedSubscript: "Image" as NSString)
+    let instance = context.evaluateScript("Image.init('picture', 0.5)")
+    
+    print("instance: ", instance)
 }
 
 func usingBundle() {

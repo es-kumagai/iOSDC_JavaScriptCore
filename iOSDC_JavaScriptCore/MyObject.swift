@@ -21,7 +21,7 @@ class MyObject : NSObject, MyObjectInterface {
     var v1: Int
     var v2: Int
     var v3: Int
-
+    
     static func make(v1: Int, v2: Int) -> AnyObject {
         
         return self.init(v1: v1, v2: v2, v3: 500)
@@ -32,5 +32,10 @@ class MyObject : NSObject, MyObjectInterface {
         self.v1 = v1
         self.v2 = v2
         self.v3 = v3
+    }
+    
+    deinit {
+        
+        print("Deinit (v1: \(v1), v2: \(v2), v3: \(v3))")
     }
 }

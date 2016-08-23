@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import TestModule
+
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

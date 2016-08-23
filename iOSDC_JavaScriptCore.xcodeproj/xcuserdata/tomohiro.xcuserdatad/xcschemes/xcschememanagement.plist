@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TestModule.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>iOSDC_JavaScriptCore.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>B173248E1D6B428F00107AB5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B1CABF131D6454EA00EAF58A</key>
 		<dict>
 			<key>primary</key>
