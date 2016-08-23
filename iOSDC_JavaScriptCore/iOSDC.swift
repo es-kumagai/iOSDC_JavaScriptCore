@@ -37,6 +37,8 @@ func ecma6() {
     print(context.evaluateScript("var array2 = [for (i of [1,2,3,4,5]) if (i > 3) i]"))
     print(context.evaluateScript("var square2 = x => x * x; square2;"))
     print(context.evaluateScript("function increment(x, y = 1) { return x += y; }; increment(10);"))
+    print(context.evaluateScript("0b11111"))
+    print(context.evaluateScript("class MyClass { constructor() { } }; new MyClass();"))
 }
 
 func reference() {
