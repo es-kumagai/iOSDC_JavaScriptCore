@@ -23,6 +23,7 @@ func iOSDC() {
     instantiate()
     reference()
     ecma6()
+    customOperator()
     
     print("Done")
 }
@@ -33,12 +34,12 @@ func ecma6() {
     
     let context = JSContext()!
 
-    print(context.evaluateScript("[for (x of [0, 1, 2]) for (y of [0, 1, 2]) x + '' + y]"))
-    print(context.evaluateScript("var array2 = [for (i of [1,2,3,4,5]) if (i > 3) i]"))
-    print(context.evaluateScript("var square2 = x => x * x; square2;"))
-    print(context.evaluateScript("function increment(x, y = 1) { return x += y; }; increment(10);"))
-    print(context.evaluateScript("0b11111"))
-    print(context.evaluateScript("class MyClass { constructor() { } }; new MyClass();"))
+    print(context.evaluateScript("[for (x of [0, 1, 2]) for (y of [0, 1, 2]) x + '' + y]"))           // undefined
+    print(context.evaluateScript("var array2 = [for (i of [1,2,3,4,5]) if (i > 3) i]"))               // undefined
+    print(context.evaluateScript("var square2 = x => x * x; square2;"))                               // macOS Sierra で OK
+    print(context.evaluateScript("function increment(x, y = 1) { return x += y; }; increment(10);"))  // macOS Sierra で OK
+    print(context.evaluateScript("0b11111"))                                                          // macOS El Capitan で OK
+    print(context.evaluateScript("class MyClass { constructor() { } }; new MyClass();"))              // macOS El Capitan で OK
 }
 
 func reference() {

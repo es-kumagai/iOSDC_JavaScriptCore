@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B15320B31D6FE1D300C368EE /* CustomOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15320B21D6FE1D300C368EE /* CustomOperation.swift */; };
 		B167A2AF1D655523003EF904 /* iOSDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167A2AE1D655523003EF904 /* iOSDC.swift */; };
 		B167A2B11D65D6A0003EF904 /* MyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167A2B01D65D6A0003EF904 /* MyObject.swift */; };
 		B167A2B31D65F0C9003EF904 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167A2B21D65F0C9003EF904 /* Image.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B15320B21D6FE1D300C368EE /* CustomOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperation.swift; sourceTree = "<group>"; };
 		B167A2AE1D655523003EF904 /* iOSDC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDC.swift; sourceTree = "<group>"; };
 		B167A2B01D65D6A0003EF904 /* MyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyObject.swift; sourceTree = "<group>"; };
 		B167A2B21D65F0C9003EF904 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B167A2AE1D655523003EF904 /* iOSDC.swift */,
+				B15320B21D6FE1D300C368EE /* CustomOperation.swift */,
 				B173249E1D6C05FD00107AB5 /* Test.swift */,
 				B1F283381D66B51C0025D701 /* JavaScriptAPI.js */,
 				B1F2833A1D66B7CB0025D701 /* Support Files */,
@@ -267,6 +270,7 @@
 				B167A2B11D65D6A0003EF904 /* MyObject.swift in Sources */,
 				B1CABF181D6454EA00EAF58A /* AppDelegate.swift in Sources */,
 				B167A2B31D65F0C9003EF904 /* Image.swift in Sources */,
+				B15320B31D6FE1D300C368EE /* CustomOperation.swift in Sources */,
 				B173249F1D6C05FD00107AB5 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +478,7 @@
 				B17324991D6B428F00107AB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1CABF0F1D6454EA00EAF58A /* Build configuration list for PBXProject "iOSDC_JavaScriptCore" */ = {
 			isa = XCConfigurationList;
